@@ -1,6 +1,6 @@
 colorscheme desert
 
-
+let Tlist_Ctags_Cmd = '/usr/bin/ctags'
 
 autocmd InsertLeave * se nocul  " 用浅色高亮当前行  
 autocmd InsertEnter * se cul    " 用浅色高亮当前行  
@@ -8,7 +8,7 @@ set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strf
 set laststatus=1    " 启动显示状态行(1),总是显示状态行(2)  
 "set foldenable      " 允许折叠  
 "set foldmethod=manual   " 手动折叠  
-set tags=/home/king/uboot1.3.4-icool210-v1.1/ctags	"加入linux源码的tags"
+set tags=/home/king/workspace/cool210/android/uboot1.3.4-icool210-v1.1/tags	"加入linux源码的tags"
 set paste
 set nocompatible  "去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限  
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -87,7 +87,7 @@ set cursorline              " 突出显示当前行
 set magic                   " 设置魔术
 "set guioptions-=T           " 隐藏工具栏
 "set guioptions-=m           " 隐藏菜单栏
-"set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\
+set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\
 " 设置在状态行显示的信息
 set foldcolumn=0
 set foldmethod=indent 
@@ -125,6 +125,8 @@ set ignorecase
 "搜索逐字符高亮
 set hlsearch
 set incsearch
+"设置字体和大小
+set guifont=DejaVu\ Sans\ Mono\ 14
 "行内替换
 set gdefault
 "编码设置
@@ -225,3 +227,5 @@ let Tlist_Auto_Open=1
 "当只有taglist的窗口是自动退出vim
 let Tlist_Exit_OnlyWindow=1
 
+"remap F1 to open taglist
+map <silent> <F1> :TlistToggle<cr>
